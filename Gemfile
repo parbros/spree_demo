@@ -23,3 +23,7 @@ gem 'spree_slider', :github => 'gus4no/spree_slider', :branch => '2-2-stable'
 group :development do
   gem 'debugger'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
