@@ -4,4 +4,8 @@ Spree::HomeController.class_eval do
     @popular_products = Spree::Product.popular_products(8)
     @recent_products = Spree::Product.recent_product(8)
   end
+
+  def blank
+    render nothing: true
+  end
 end
