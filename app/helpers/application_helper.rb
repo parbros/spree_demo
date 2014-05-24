@@ -4,6 +4,10 @@ module ApplicationHelper
     Spree::Slide.published.count-1
   end
 
+  def spree_sliders_count
+    Spree::Slide.published.count
+  end
+
   def render_slide_image slide, index
     if slide.slide_link.present? && slide.product.nil?
       link_to slide.slide_link, class: 'item animated fadeInRight' do

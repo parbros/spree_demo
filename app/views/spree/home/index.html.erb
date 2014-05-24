@@ -1,27 +1,29 @@
-<div id="carousel-example-generic" class="carousel slide">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <% (0..spree_slider_count_to_indicator).each do |index| %>
-    <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" <%= raw 'class="active"' if index.zero? %> ></li>
-    <% end %>
-  </ol>
+<% if spree_sliders_count > 0 %>
+  <div id="carousel-example-generic" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% (0..spree_slider_count_to_indicator).each do |index| %>
+      <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" <%= raw 'class="active"' if index.zero? %> ></li>
+      <% end %>
+    </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <!-- Item -->
-    <% @slides.each_with_index do |slide, index| %>
-      <%= render_slide_image slide, index %>
-    <% end %>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <!-- Item -->
+      <% @slides.each_with_index do |slide, index| %>
+        <%= render_slide_image slide, index %>
+      <% end %>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
   </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
-</div>
+<% end %>
 
 <div class="hero">
    <div class="container">
@@ -35,7 +37,6 @@
     <div class="sep-bor"></div>
    </div>
 </div>
-
 
 <div class="shop-items blocky">
   <div class="container">
