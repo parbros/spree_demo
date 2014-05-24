@@ -20,4 +20,6 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
 gem 'spree_slider', :github => 'gus4no/spree_slider', :branch => '2-2-stable'
 
-gem 'debugger'
+group :development do
+  gem 'debugger'
+end
