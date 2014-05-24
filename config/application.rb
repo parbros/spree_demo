@@ -26,9 +26,10 @@ module SpreeDemo
       end
     end
 
+    config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
 
-    config.assets.initialize_on_precompile = false
+    config.assets.precompile += ['spree/frontend/all.css', 'spree/frontend/all.js', 'spree/backend/all.css', 'spree/backend/all.js']
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
