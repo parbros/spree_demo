@@ -11,7 +11,7 @@ body {
   font-size: 13px;
   line-height: 25px;
   -webkit-font-smoothing: antialiased;
-  background: #fafafa image_url('/assets/main-back.png') repeat;
+  background: #fafafa image-url('main-back.png') repeat;
 }
 
 h1, h2, h3, h4 {
@@ -90,7 +90,7 @@ strong {
 .sep {
   height: 5px;
   margin: 20px 0px;
-  background: image_url("/assets/sep.png") repeat;
+  background: image-url("sep.png") repeat;
 }
 
 .blocky {
@@ -678,7 +678,7 @@ strong {
     padding: 25px 0px;
     color: #fff;
     margin: 3px 0px;
-    background: #333333 image_url('/assets/bit-tile-blue.gif') repeat center center;
+    background: #333333 image-url('bit-tile-blue.gif') repeat center center;
     border-top: 1px solid #999;
     border-bottom: 1px solid #999;
   }
@@ -1733,7 +1733,7 @@ strong {
 /* Footer */
 
 footer {
-  background: #333333 image_url("/assets/footer-back.png") repeat;
+  background: #333333 image-url("footer-back.png") repeat;
   border-top: 3px solid #ddd;
   box-shadow: inset 0px 0px 3px #111;
   color: #ccc;
