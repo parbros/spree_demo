@@ -9,14 +9,26 @@
       <!-- Item details -->
       <div class="item-details">
         <!-- Name -->
-        <h5><a href="single-item.html">Nokia One V</a></h5>
+        <h5>
+          <%= link_to truncate(product.name, :length => 25), url,
+            :class => 'info', :itemprop => "name", :title => product.name %>
+          </h5>
         <!-- Para. Note more than 2 lines. -->
-        <p>Something about the product goes here. Not More than 2 lines.</p>
+        <p><%= truncate(product.description, length: 60)%></p>
         <hr />
         <!-- Price -->
-        <div class="item-price pull-left">$50</div>
+        <div class="item-price pull-left"><%= display_price(product) %></div>
         <!-- Add to cart -->
-        <div class="pull-right"><a href="#" class="btn btn-danger btn-sm">Add to Cart</a></div>
+        <%= form_for :order, :url => populate_orders_path do |f| %>
+          <%= hidden_field_tag "variant_id", product.master.id %>
+          <%= hidden_field_tag "quantity", 1 %>
+          <div class="pull-right">
+            <%= button_tag :class => 'btn btn-danger btn-sm', :id => 'add-to-cart-button',
+              :type => :submit do %>
+              <%= Spree.t(:add_to_cart) %>
+            <% end %>
+          </div>
+        <% end %>
         <div class="clearfix"></div>
       </div>
     </div>
