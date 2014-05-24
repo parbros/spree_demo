@@ -1,6 +1,6 @@
-<% cache("views/spree/products/product/#{product.product_cache_key}") do %>
+<% cache("views/spree/shared/product/#{product.product_cache_key}") do %>
   <% url = product_url(product, :taxon_id => @taxon.try(:id)) %>
-  <div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="item">
       <!-- Item image -->
       <div class="item-image">

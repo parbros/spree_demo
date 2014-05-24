@@ -11,4 +11,5 @@ Spree.config do |config|
   # config.site_name = "Spree Demo Site"
 end
 
+Spree::Config[:max_level_in_taxons_menu] = 2
 Spree.user_class = "Spree::LegacyUser"

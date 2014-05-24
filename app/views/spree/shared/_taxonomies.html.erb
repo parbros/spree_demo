@@ -1,0 +1,7 @@
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 2 %>
+<% @taxonomies.each do |taxonomy| %>
+  <% cache [taxonomy, max_level] do %>
+    <h5 class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %></h5>
+    <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
+  <% end %>
+<% end %>

@@ -1,0 +1,18 @@
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+
+<div class="col-md-9 col-md-push-3">
+ <% if products.any? %>
+   <% products.each_slice(3).each do |batch_products| %>
+     <div class="row">
+       <%= render partial: 'spree/products/product', collection: batch_products %>
+     </div>
+   <% end %>
+ <% end %>
+
+ <% if paginated_products.respond_to?(:num_pages) %>
+   <%= paginate paginated_products %>
+ <% end %>
+</div>

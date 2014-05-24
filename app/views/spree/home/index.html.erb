@@ -45,7 +45,7 @@
     <% cache(cache_key_for_popular_products) do %>
       <% @popular_products.each_slice(4).each do |popular_products| %>
         <div class="row">
-          <%= render partial: 'spree/products/product', collection: popular_products %>
+          <%= render partial: 'spree/shared/product', collection: popular_products %>
         </div>
       <% end %>
     <% end %>
