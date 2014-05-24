@@ -104,4 +104,6 @@ $('#myTab a').click(function (e) {
 
 $(document).ready(function() {
     $('.sidey .nav').navgoco();
-});
+});//= require js/jquery.anythingslider
+//= require js/jquery.anythingslider.fx
+//= require js/jquery.anythingslider.video

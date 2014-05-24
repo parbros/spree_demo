@@ -1,0 +1,50 @@
+<div id="carousel-example-generic" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% (0..spree_slider_count_to_indicator).each do |index| %>
+    <li data-target="#carousel-example-generic" data-slide-to="<%= index %>" <%= raw 'class="active"' if index.zero? %> ></li>
+    <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <!-- Item -->
+    <% @slides.each_with_index do |slide, index| %>
+      <%= render_slide_image slide, index %>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+</div>
+
+<div class="hero">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <!-- Catchy title -->
+            <h3>It<span class="color">'</span>s Lorem ipsum <span class="color">dolor</span> sit amet consectetur</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique est sit amet diam interdum semper. Vestibulum condimentum ante urna, vel interdum odio accumsan id.</p>
+         </div>
+      </div>
+    <div class="sep-bor"></div>
+   </div>
+</div>
+
+
+<div class="shop-items blocky">
+  <div class="container">
+    <% cache(cache_key_for_popular_products) do %>
+      <% @popular_products.each_slice(4).each do |popular_products| %>
+        <div class="row">
+          <%= render partial: 'spree/products/product', collection: popular_products %>
+        </div>
+      <% end %>
+    <% end %>
+ </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="item animated fadeInRight <%= 'active' if active %>">
+  <%= image_tag slide.slide_image.url, class: 'img-responsive' %>
+  <div class="carousel-caption">
+    <h2 class="animated fadeInLeftBig"><%= slide.slide_name %></h2>
+    <% if slide.body.present? %>
+      <p class="animated fadeInRightBig"><%= slide.body%> </p>
+    <% end %>
+    <% if slide.product %>
+      <%= link_to "Compra Ahora - #{slide.product.price}", slide.slide_link, class: "animated fadeInLeftBig btn btn-info btn-lg"%>
+    <% end %>
+  </div>
+</div>
