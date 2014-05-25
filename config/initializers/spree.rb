@@ -6,9 +6,13 @@
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 Spree.config do |config|
-  # Example:
-  # Uncomment to override the default site name.
-  # config.site_name = "Spree Demo Site"
+
+  if Rails.env.production?
+    config.use_s3 = true
+    config.s3_bucket = 'parbros-spree-demo'
+    config.s3_access_key = ENV['AWS_ACCESS_KEY']
+    config.s3_secret = ENV['AWS_SECRET_KEY']
+  end
 end
 
 Spree::Config[:max_level_in_taxons_menu] = 2
