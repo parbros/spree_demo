@@ -8,10 +8,14 @@
 Spree.config do |config|
 
   if Rails.env.production?
-    config.use_s3 = true
-    config.s3_bucket = 'parbros-spree-demo'
-    config.s3_access_key = ENV['AWS_ACCESS_KEY']
-    config.s3_secret = ENV['AWS_SECRET_KEY']
+    config.paperclip_defaults = {
+          :storage => :s3,
+          :bucket => ENV['S3_BUCKET_NAME'],
+          :s3_credentials => {
+              :access_key_id => ENV['AWS_ACCESS_KEY'],
+              :secret_access_key => ENV['AWS_SECRET_KEY']
+          }
+      }
   end
 end
 
