@@ -16,6 +16,6 @@ Spree::Product.class_eval do
   private
 
   def clear_product_cache
-    Rails.cache.delete(in_stock_cache_key)
+    Rails.cache.delete(product_cache_key)
   end
 end
